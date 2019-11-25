@@ -48,7 +48,7 @@ namespace SampleCRUDwithDapper.WebBridge
 
         public bool InsertUserInfo(UserInfoViewModel userInfoModel)
         {
-            if (userInfoModel.EmailId == null || userInfoModel.Password == null || userInfoModel.FirstName == null || userInfoModel.LastName == null)
+            if (string.IsNullOrEmpty(userInfoModel.EmailId) || string.IsNullOrEmpty(userInfoModel.Password) || string.IsNullOrEmpty(userInfoModel.FirstName) || string.IsNullOrEmpty(userInfoModel.LastName))
                 return false;
             var userAddress = new Address
             {
